@@ -1,5 +1,9 @@
 # unity_ros_niching
 
+This is a tutorial for Unity3D communicate with Ubuntu using ROS.
+This work would be relaty to [Unity-ROS-Bridge](https://github.com/nichinglin/Unity-ROS-Bridge)
+This part is for Ubuntu16.04 and Unity-ROS-Bridge is for Windows or Mac user testing on Unity3D 5.1.4.
+
 ## Setup
 
 Your will need to install git, docker, and some depandency
@@ -37,10 +41,16 @@ git clone https://github.com/nichinglin/unity_ros_niching.git
 
 ## How To Run
 ```
+# terminal 1
 source ~/unity_ros_niching/docker_run.sh
-source ~/unity_ros_niching/unity.sh [master_ip] [unity_ip]
+source ~/unity_ros_niching/unity.sh [master_ip]
 roslaunch rosbridge_server rosbridge_websocket.launch
+# terminal 2
+source ~/unity_ros_niching/docker_run.sh same
+source ~/unity_ros_niching/unity.sh [master_ip]
+rostopic list
 ```
+(add same to any terminal except the first docker terminal)
 
 ## Others
 
