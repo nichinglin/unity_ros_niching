@@ -26,13 +26,33 @@ sudo usermod -aG docker $USER
 
 ### Download
 ```
-docker pull
+# setup user and email
+git config --globle user.email "yourmail@gmail.com"
+git config --globle user.name "yourname"
+docker login # login with our email and name
+# download
+docker pull nichinglin/unity_ros_niching
 git clone https://github.com/nichinglin/unity_ros_niching.git
+```
 
 ## How To Run
 ```
-cd ~/unity_ros_niching/
-source docker_run.sh
-source unity.sh [master_ip] [unity_ip]
+source ~/unity_ros_niching/docker_run.sh
+source ~/unity_ros_niching/unity.sh [master_ip] [unity_ip]
 roslaunch rosbridge_server rosbridge_websocket.launch
+```
+
+## Others
+
+### How to build your Docker
+```
+cd ~/unity_ros_niching/docker/
+docker build --rm -t [your_docker_image_name] . --no-cache
+# example:
+# docker build --rm -t unity_ros_niching:laptop . --no-cache
+```
+### How to Push to your docker hub
+```
+docker tag [image] [dockerhub_name]/[image]:[tag]
+docker push [dockerhub_name]/[image]:[tag]
 ```

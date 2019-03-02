@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -q -y \
     git \
     sudo \
     bash \
-    net-tools
+    net-tools \
     && rm -rf /var/lib/apt/lists/*
 
 # setup keys
@@ -48,4 +48,4 @@ RUN apt-get update && apt-get install -y --fix-missing \
 #ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
 
-WORKDIR ~/unity_ros_niching
+WORKDIR /root/unity_ros_niching
