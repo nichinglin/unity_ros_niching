@@ -59,7 +59,7 @@ rostopic list
 cd ~/unity_ros_niching/docker/
 docker build --rm -t [your_docker_image_name] . --no-cache
 # example:
-# docker build --rm -t unity_ros_niching:laptop . --no-cache
+# docker build --rm -t nichinglin/unity_ros_niching:laptop . --no-cache
 ```
 ### How to Push to your docker hub
 ```
