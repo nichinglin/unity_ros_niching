@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export repo=haptic_device_niching
+export repo=unity_ros_niching
 
 if [ "$1" == "same" ]; then
   docker exec -it $repo bash
